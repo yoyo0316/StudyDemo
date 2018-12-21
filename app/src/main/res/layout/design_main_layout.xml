@@ -11,10 +11,20 @@
         app:itemText="snackBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-    <com.github.yoyozhangh.studydemo.CommonItem
-        android:id="@+id/textInput_Layout"
-        app:itemNumber="2"
-        app:itemText="snackBar"
+
+    <!--todo test-->
+    <android.support.design.widget.TextInputLayout
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/TextAppearance.Design.Error"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
+        <android.support.design.widget.TextInputEditText
+            android:imeOptions="actionGo"
+            android:inputType="text"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.design.widget.TextInputLayout>
+
+
 </LinearLayout>
