@@ -1,0 +1,49 @@
+
+android 动画机制
+
+1，逐帧动画
+
+2，补间动画
+AlphaAnimation 透明度动画
+ScaleAnimation 缩放动画
+TranslateAnimation 位移动画
+RotateAnimation 旋转动画
+
+3，属性动画
+属性动画有两个非常重要的类：ValueAnimator 类 & ObjectAnimator 类
+
+ValueAnimator类
+定义：属性动画机制中 最核心的一个类
+实现动画的原理：通过不断控制 值 的变化，再不断 手动 赋给对象的属性，从而实现动画效果
+
+ValueAnimator类中有3个重要方法：
+
+ValueAnimator.ofInt（int values）
+ValueAnimator.ofFloat（float values）
+ValueAnimator.ofObject（int values）
+
+
+ObjectAnimator类
+实现动画的原理
+直接对对象的属性值进行改变操作，从而实现动画效果
+
+如直接改变 View的 alpha 属性 从而实现透明度的动画效果
+继承自ValueAnimator类，即底层的动画实现机制是基于ValueAnimator类
+本质原理： 通过不断控制 值 的变化，再不断 自动 赋给对象的属性，从而实现动画效果
+
+ObjectAnimator与 ValueAnimator类的区别：
+ValueAnimator 类是先改变值，然后 手动赋值 给对象的属性从而实现动画；是 间接 对对象属性进行操作；
+ObjectAnimator 类是先改变值，然后 自动赋值 给对象的属性从而实现动画；是 直接 对对象属性进行操作；
+
+
+
+Android 属性动画详解 见如下地址
+
+Android 属性动画：这是一篇很详细的 属性动画 总结&攻略
+https://www.jianshu.com/p/2412d00a0ce4
+
+4，过渡动画
+Android Transition（Android过渡动画）
+https://blog.csdn.net/wuyuxing24/article/details/78857912
+demo 地址：
+git@github.com:tuacy/TransitionDemo.git

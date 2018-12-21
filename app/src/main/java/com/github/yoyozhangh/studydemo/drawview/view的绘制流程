@@ -1,0 +1,32 @@
+
+
+视图的绘制 分为三个 过程
+
+1，测量 Measure  自定义 测量过程 重写 onMeasure 方法
+
+2，布局 Layout 自定义布局过程 重写 onLayout 方法
+
+3，绘制 Draw
+draw绘制流程
+ 1）绘制view的背景
+ drawBackground（canvas）
+
+ 2）如果需要的话 保存canvas的图层，为 fading 做准备
+ saveCount = canvas.getSaveCount();
+ canvas.saveLayer();
+
+ 3)绘制view的内容
+ onDraw（canvas）
+
+ 4)绘制view的子view
+ dispatchDraw(canvas)
+
+ 5)如果需要的话 绘制view的fading边缘并恢复图层
+ canvas.drawRect();
+ canvas.restoreeToCount(saveCount);
+
+ 6)绘制 view的装饰
+ onDrawScrollBars(canvas);
+
+
+
