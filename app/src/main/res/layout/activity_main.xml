@@ -20,5 +20,11 @@
         app:itemNumber="6"
         app:itemText="Design Support Library" />
 
+    <com.github.yoyozhangh.studydemo.CommonItem
+        android:id="@+id/thread_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemNumber="13"
+        app:itemText="Android 异步处理技术" />
 
 </LinearLayout>

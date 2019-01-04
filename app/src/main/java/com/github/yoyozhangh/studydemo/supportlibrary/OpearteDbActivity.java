@@ -1,4 +1,4 @@
-package com.github.yoyozhangh.studydemo;
+package com.github.yoyozhangh.studydemo.supportlibrary;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -16,6 +16,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.github.yoyozhangh.studydemo.CommonItem;
+import com.github.yoyozhangh.studydemo.R;
 
 import java.io.File;
 import java.io.FileOutputStream;

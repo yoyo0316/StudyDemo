@@ -7,6 +7,10 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.github.yoyozhangh.studydemo.supportlibrary.DesignActivity;
+import com.github.yoyozhangh.studydemo.supportlibrary.OpearteDbActivity;
+import com.github.yoyozhangh.studydemo.thread.ThreadMainActivity;
+
 /**
  * Created by yoyozhangh on 2018/12/21.
  */
@@ -36,5 +40,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(mContext,DesignActivity.class));
             }
         });
+
+        findViewById(R.id.thread_item).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext,ThreadMainActivity.class));
+            }
+        });
+
     }
 }
