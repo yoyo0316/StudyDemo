@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.github.yoyozhangh.studydemo.serial.SerialMainActivity;
 import com.github.yoyozhangh.studydemo.supportlibrary.DesignActivity;
 import com.github.yoyozhangh.studydemo.supportlibrary.OpearteDbActivity;
 import com.github.yoyozhangh.studydemo.thread.ThreadMainActivity;
@@ -48,5 +49,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.serial).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext,SerialMainActivity.class));
+            }
+        });
+
+        findViewById(R.id.webview).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext,WebViewMainActivity.class));
+            }
+        });
     }
 }

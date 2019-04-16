@@ -1,23 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <com.github.yoyozhangh.studydemo.CommonItem
         android:id="@+id/handler_thread"
-        app:itemNumber="1"
-        app:itemText="HandlerThread 使用演示"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:itemNumber="1"
+        app:itemText="HandlerThread 使用演示" />
 
     <com.github.yoyozhangh.studydemo.CommonItem
         android:id="@+id/intent_service"
-        app:itemNumber="2"
-        app:itemText="IntentService 使用演示"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:itemNumber="2"
+        app:itemText="IntentService 使用演示" />
+
+    <com.github.yoyozhangh.studydemo.CommonItem
+        android:id="@+id/async_query_handler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemNumber="3"
+        app:itemText="AsyncQueryHandler 使用演示" />
+
+    <com.github.yoyozhangh.studydemo.CommonItem
+        android:id="@+id/pool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemNumber="4"
+        app:itemText="线程池使用演示" />
+
     <ImageView
         android:id="@+id/imge"
         android:layout_width="wrap_content"

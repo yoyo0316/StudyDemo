@@ -17,10 +17,9 @@ public class MyIntentService extends IntentService {
 
     public static UpdateUI updateUI;
 
-    public MyIntentService(String name) {
-        super(name);
+    public MyIntentService() {
+        super("MyIntentService");
     }
-
 
     public static void setUpdateUI( UpdateUI updateUIInterface){
         updateUI = updateUIInterface;

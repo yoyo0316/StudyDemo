@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -24,6 +25,14 @@
         <activity android:name=".supportlibrary.DesignActivity" />
         <activity android:name=".supportlibrary.OpearteDbActivity" />
         <activity android:name=".thread.ThreadMainActivity" />
+        <activity android:name=".serial.SerialMainActivity" />
+        <activity android:name=".WebViewMainActivity" />
+
+        <service android:name=".thread.MyIntentService" />
+        <provider
+            android:name=".db.ChannelContentProvider"
+            android:authorities="com.github.yoyozhangh.studydemo"
+            android:exported="true" />
     </application>
 
 </manifest>

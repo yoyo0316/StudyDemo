@@ -27,4 +27,17 @@
         app:itemNumber="13"
         app:itemText="Android 异步处理技术" />
 
+    <com.github.yoyozhangh.studydemo.CommonItem
+        android:id="@+id/serial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemNumber="14"
+        app:itemText="Android 序列化方案研究" />
+
+    <com.github.yoyozhangh.studydemo.CommonItem
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemNumber="15"
+        app:itemText="WebView 使用攻略" />
 </LinearLayout>
