@@ -31,7 +31,7 @@ public class ThreadPoolManger {
         mThreadPoolExecutor.execute(delayThread);
     }
 
-    //创建叫号员 线程 不停的获取
+    //创建监听 线程 不停的获取
     public Runnable coreThread = new Runnable() {
         Runnable runn = null;
 

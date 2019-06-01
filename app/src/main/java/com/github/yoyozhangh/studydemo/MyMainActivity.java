@@ -1,6 +1,8 @@
 package com.github.yoyozhangh.studydemo;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -19,7 +21,27 @@ public class MyMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_activity_main);
 
-        sendRequest();
+//        sendRequest();
+
+
+        final Handler mHandler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+            }
+        };
+
+
+        new Thread() {
+            @Override
+            public void run() {
+
+                Message message = Message.obtain();
+                message.what = 1;
+                message.arg1 = 666;
+                mHandler.sendMessage(message);
+            }
+        }.start();
     }
 
     private void sendRequest() {

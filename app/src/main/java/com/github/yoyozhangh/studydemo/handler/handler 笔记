@@ -1,0 +1,48 @@
+
+Handler 源码分析
+
+从源码层下手，实现Handler核心机制
+
+1，什么是 Handler
+
+Android SDK 中用来处理异步消息的核心类
+
+子线程可以通过Handler 来通知主线程进行UI更新
+
+Handler 机制核心类
+
+Handler
+
+Looper
+轮询器 ，不断去消息队列中查询消息 发生到 线程中去
+
+Message
+在整个消息处理机制中，Message 又叫 Task  ,封装了任务携带的信息和处理该任务的Handler，有这么几点需要注意：
+（1）尽管Message 有 Public的默认构造方法，但是你应该通过Message.obtain() 来从消息中获得空消息对象，以节省资源。
+
+（2） Message如果只需要携带 简单的 int 信息 ，请优先 使用 arg1 和 arg2 来传递消息，这比使用 Bundle 更省内存。
+
+MessageQueue
+消息队列
+
+
+
+入队
+Handler.sendMessage -> queue.enqueueMessage
+
+出队
+Looper.loop  ->  queue.next
+
+Handler
+
+MessageQueue mQueue
+Looper mLooper
+
+
+ThreadLocal 线程的数据隔离
+
+
+
+
+
+
