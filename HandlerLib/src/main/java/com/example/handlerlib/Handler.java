@@ -6,16 +6,16 @@ public class Handler {
     private Looper mLooper;
 
     public Handler() {
-        //è·å–ä¸»çº¿ç¨‹çš„Looperå¯¹è±¡
+        //»ñÈ¡Ö÷Ïß³ÌµÄLooper¶ÔÏó
         mLooper = Looper.myLooper();
         this.mQueue = mLooper.mQueue;
     }
 
     /**
-     * å‘ç”Ÿæ¶ˆæ¯ï¼Œå‹äººé˜Ÿåˆ—
+     * ·¢ÉúÏûÏ¢£¬Ñ¹ÈË¶ÓÁĞ
      */
     public void sendMessage(Message msg) {
-        msg.target = this;//å°†Handler ç»‘å®šåˆ°msg çš„ target
+        msg.target = this;//½«Handler °ó¶¨µ½msg µÄ target
         mQueue.enqueueMessage(msg);
     }
 

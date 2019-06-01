@@ -37,10 +37,10 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
 //                animationDrawable.start();
-//                Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.alpha);
-//                Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.scale);
-//                Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.translate);
-//                Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.rotate);
+//                Animation animation = AnimationUtils.loadAnimation(LoginActivity.this, R.anim.alpha);
+//                Animation animation = AnimationUtils.loadAnimation(LoginActivity.this, R.anim.scale);
+//                Animation animation = AnimationUtils.loadAnimation(LoginActivity.this, R.anim.translate);
+//                Animation animation = AnimationUtils.loadAnimation(LoginActivity.this, R.anim.rotate);
 //                imageView.startAnimation(animation);
 
 //                alpha(imageView);

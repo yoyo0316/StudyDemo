@@ -6,7 +6,29 @@
     android:padding="8dp">
 
     <Button
+        android:id="@+id/goLogin"
+        android:text="跳转到登录界面"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/goMine"
+        android:text="跳转到mine 组件"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/getFragment"
+        android:text="获取Fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="网络监听" />
+        android:layout_height="wrap_content"></FrameLayout>
+
 </LinearLayout>

@@ -6,24 +6,24 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class MessageQueue {
 
-    // é€šè¿‡æ•°ç»„çš„ç»“æ„å­˜å‚¨ Message å¯¹è±¡
+    // Í¨¹ıÊı×éµÄ½á¹¹´æ´¢ Message ¶ÔÏó
     Message[] items;
 
-    //å…¥é˜Ÿä¸å‡ºé˜Ÿçš„å…ƒç´ çš„ç´¢å¼•ä½ç½®
+    //Èë¶ÓÓë³ö¶ÓµÄÔªËØµÄË÷ÒıÎ»ÖÃ
     int putIndex;
     int takeIndex;
 
-    //è®¡æ•°å™¨
+    //¼ÆÊıÆ÷
     int count;
 
     private Lock lock;
-    //æ¡ä»¶å˜é‡
+    //Ìõ¼ş±äÁ¿
     private Condition notEmpty;
     private Condition notFull;
 
 
     public MessageQueue() {
-        //æ¶ˆæ¯é˜Ÿåˆ—åº”è¯¥æœ‰å¤§å°é™åˆ¶
+        //ÏûÏ¢¶ÓÁĞÓ¦¸ÃÓĞ´óĞ¡ÏŞÖÆ
         this.items = new Message[50];
         this.lock = new ReentrantLock();
         this.notEmpty = lock.newCondition();
@@ -31,14 +31,14 @@ public class MessageQueue {
     }
 
     /**
-     * åŠ å…¥é˜Ÿåˆ—
+     * ¼ÓÈë¶ÓÁĞ
      *
      * @param msg
      */
     public void enqueueMessage(Message msg) {
         try {
             lock.lock();
-            //æ¶ˆæ¯é˜Ÿåˆ—æ»¡äº†ï¼Œå­çº¿ç¨‹åœæ­¢å‘é€æ¶ˆæ¯ é˜»å¡
+            //ÏûÏ¢¶ÓÁĞÂúÁË£¬×ÓÏß³ÌÍ£Ö¹·¢ËÍÏûÏ¢ ×èÈû
             while (count == items.length) {
                 try {
                     notFull.await();
@@ -48,10 +48,10 @@ public class MessageQueue {
             }
 
             items[putIndex] = msg;
-            //å¾ªç¯å–å€¼
+            //Ñ­»·È¡Öµ
             putIndex = (++putIndex == items.length) ? 0 : putIndex;
             count++;
-            //æœ‰æ–°çš„Message å¯¹è±¡ï¼Œé€šçŸ¥ä¸»çº¿ç¨‹
+            //ÓĞĞÂµÄMessage ¶ÔÏó£¬Í¨ÖªÖ÷Ïß³Ì
             notEmpty.signalAll();
         } finally {
             lock.unlock();
@@ -60,7 +60,7 @@ public class MessageQueue {
     }
 
     /**
-     * å‡ºé˜Ÿ
+     * ³ö¶Ó
      *
      * @return
      */
@@ -68,7 +68,7 @@ public class MessageQueue {
         Message msg = null;
         try {
             lock.lock();
-            //å¦‚æœæ¶ˆæ¯é˜Ÿåˆ—æ˜¯ç©ºçš„ï¼Œï¼Œä¸»çº¿ç¨‹looper åœæ­¢è½®è¯¢
+            //Èç¹ûÏûÏ¢¶ÓÁĞÊÇ¿ÕµÄ£¬£¬Ö÷Ïß³Ìlooper Í£Ö¹ÂÖÑ¯
             while (count == 0){
                 try {
                     notEmpty.await();
@@ -76,12 +76,12 @@ public class MessageQueue {
                     e.printStackTrace();
                 }
             }
-            msg = items[takeIndex];//å–å‡º
-            items[takeIndex] = null;//å…ƒç´ ç½®ç©º
-            //å¾ªç¯å–å€¼
+            msg = items[takeIndex];//È¡³ö
+            items[takeIndex] = null;//ÔªËØÖÃ¿Õ
+            //Ñ­»·È¡Öµ
             takeIndex = (++takeIndex == items.length) ? 0 : takeIndex;
             count--;
-            //ä½¿ç”¨äº†ä¸€ä¸ªMessage å¯¹è±¡ï¼Œç»§ç»­ç”Ÿäº§
+            //Ê¹ÓÃÁËÒ»¸öMessage ¶ÔÏó£¬¼ÌĞøÉú²ú
             notFull.signalAll();
         } finally {
             lock.unlock();
