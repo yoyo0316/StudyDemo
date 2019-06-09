@@ -5,7 +5,7 @@ import java.util.UUID;
 public class HandlerTest {
     public static void main(String[] args) {
 
-        // è½®è¯¢å™¨åˆå§‹åŒ–
+        // ÂÖÑ¯Æ÷³õÊ¼»¯
         Looper.prepare();
         final Handler handler = new Handler() {
             @Override
@@ -14,7 +14,7 @@ public class HandlerTest {
             }
         };
 
-        // å­çº¿ç¨‹å‘ç”Ÿæ¶ˆæ¯
+        // ×ÓÏß³Ì·¢ÉúÏûÏ¢
         for (int i = 0; i < 10; i++) {
             new Thread() {
                 @Override
