@@ -1,1 +1,1 @@
-include ':app', ':HandlerLib', ':componentlib', ':logincomponent', ':minecomponent', ':componentlib2'
+include ':app', ':HandlerLib', ':componentlib', ':logincomponent', ':minecomponent', ':componentlib2', ':library'

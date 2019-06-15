@@ -1,0 +1,68 @@
+
+
+学会图片终极压缩，快速处理项目中的复杂业务
+
+
+【直播主题】
+Android黑科技，图片终极压缩
+【直播大纲】
+1、浅谈Luban图片压缩框架，开启造轮子之路
+2、详解架构思路和像素压缩、质量压缩的核心原理
+3、项目中的复杂业务该如何处理
+
+戳此链接占座：https://url.163.com/rKN
+
+
+Android 黑科技：图片终极压缩
+支持自定义配置、不 失真和批量处理
+
+
+图片上传为什么要压缩？
+
+能否直接上传原图。让后台处理？
+
+图片服务器的磁盘空间非常昂贵
+
+尽可能避免Android OOM异常
+
+后台约定的规则，比如 每张图片必须<=300Kb
+
+
+图片压缩流程
+1，递归每张图片
+2，设置图片格式
+3，质量压缩
+4，像素修复
+5，返回压缩结果集
+6，完成压缩
+
+
+图片压缩方式
+
+设置图片格式
+Android 目前常用的图片格式有 png jpeg 和 webp  Bitmap.CompressFormat.JPEG
+
+质量压缩
+根据width * height 一个像素的所 占用的字节数 计算，宽高不变  bitmap.compress(format,quality,baos)
+由于png 是无损压缩，所以设置 quality无效（不适合作为缩略图）
+
+采样率压缩
+缩小图片分辨率，减少所占用磁盘空间和内存大小 BitmapFactory.Options.inSampleSize
+
+缩放压缩
+减少图片的像素，降低所占用磁盘空间大小和内存大小  canvas.drawBitmap(bitmap,null,rectF,null)
+
+JNI 调用JPEG库
+Android  的图片引擎使用的是阉割版的skia 引擎，去掉了图片压缩中的哈夫曼算法
+
+图片压缩开源框架
+https://github.com/Curzibn/Luban
+
+https://github.com/zetbaitsu/Compressor
+
+
+Luban 框架缺点
+1，当没有设定压缩路径时，抛异常无闪退
+2，源码中，压缩比率固定住60，无法修改
+3，压缩配置，参数不太适应真实项目需求
+4，不能指定压缩大小，比如100kb 以内

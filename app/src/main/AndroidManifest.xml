@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.github.yoyozhangh.studydemo">
 
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -20,11 +22,28 @@
         android:theme="@style/AppTheme"
         tools:replace="android:name">
 
-        <activity android:name=".eventbus.EventBusMainActivity">
+
+        <activity android:name=".bitmap.BitmapMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <provider
+            android:grantUriPermissions="true"
+            android:exported="false"
+            android:authorities="${applicationId}.fileprovider"
+            android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths"/>
+        </provider>
+
+        <activity android:name=".eventbus.EventBusMainActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
 
         <activity android:name=".eventbus.SecondActivity" />
@@ -55,6 +74,7 @@
         <activity android:name=".thread.ThreadMainActivity" />
         <activity android:name=".serial.SerialMainActivity" />
         <activity android:name=".WebViewMainActivity" />
+
 
         <service android:name=".thread.MyIntentService" />
         <provider

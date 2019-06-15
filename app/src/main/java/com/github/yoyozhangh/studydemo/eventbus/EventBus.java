@@ -137,6 +137,6 @@ public class EventBus {
     }
 
     public void unregister(Object object) {
-        // TODO: 2019/6/15  
+        // TODO: 2019/6/15
     }
 }
