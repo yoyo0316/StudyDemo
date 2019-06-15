@@ -20,12 +20,21 @@
         android:theme="@style/AppTheme"
         tools:replace="android:name">
 
-        <activity android:name=".BinderMainActivity">
+        <activity android:name=".eventbus.EventBusMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".eventbus.SecondActivity" />
+
+        <!--<activity android:name=".BinderMainActivity">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.MAIN" />-->
+        <!--<category android:name="android.intent.category.LAUNCHER" />-->
+        <!--</intent-filter>-->
+        <!--</activity>-->
 
         <activity
             android:name=".binder.SecondActivity"

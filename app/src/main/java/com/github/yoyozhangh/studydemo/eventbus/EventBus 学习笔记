@@ -1,0 +1,48 @@
+
+
+带你分析EventBus源码，用最少得代码实现EventBus功能
+
+
+【直播主题】EventBus原理解析及手写框架
+【直播大纲】
+1、组件间通信的常用方式，与实际项目的差距
+2、用最少的代码实现EventBus功能，反射技术的运用
+3、完成主线程、子线程任意的切换与调度
+
+戳此链接占座：
+https://url.163.com/QPF
+
+EventBus 核心原理解析与实现
+
+使用反射机制实现自定义EventBus
+
+什么是EventBus ？
+EventBus是Android和java的发布/订阅事件总线
+
+事件总线是对发布-订阅模式的一种实现。它是一种集中式事件处理机制，允许不同的组件之间彼此通信
+而又不需要相互依赖，达到解耦的目的。
+
+
+常见的组件间通信方式
+Intent
+Handler
+Interface
+Broadcast 用于监听系统服务
+Aidl   进程间通信
+Messenger 进程间通信，Google 官方提供的api
+
+
+EventBus 的优点
+
+1，代码简单，快
+2，jar包小，~50K
+3,Activity ，Fragment以及线程间通信优秀
+4，稳定，在1亿+应用得到实践
+
+EventBus 实现步骤
+1，创建线程模式
+2，创建注解
+3，封装方法类
+4，“存储”方法，并通过反射进行调用
+
+

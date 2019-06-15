@@ -80,4 +80,5 @@ dependencies {
         implementation project(':minecomponent')
     }
     implementation project(':componentlib2')
+//    implementation 'org.greenrobot:eventbus:3.1.1'
 }
